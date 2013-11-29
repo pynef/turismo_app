@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapa Movil</title>
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.0.min.js"></script>
+	<link href="{{STATIC_URL}}css/photoswipe.css" type="text/css" rel="stylesheet" />
+	<link href="{{STATIC_URL}}css/styles.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{{STATIC_URL}}js/klass.min.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript">
+		(function(window, $, PhotoSwipe){			
+			$(document).ready(function(){				
+				var options = {};
+				$("#Gallery a").photoSwipe(options);			
+			});	
+		}(window, window.jQuery, window.Code.PhotoSwipe));		
+	</script>
+</head>
+<body>
+		<div id="MainContent">
+		<ul id="Gallery" class="gallery">
+{% for imagen in imagenes %}
+<li><a href="{{MEDIA_URL}}{{imagen.imagen}}"><img style="" src="{{MEDIA_URL}}{{imagen.imagen}}" alt="{{imagen.nombre}}" /></a></li>
+{% endfor %}
+
+		</ul>
+	</div>
+</body>
+</html>

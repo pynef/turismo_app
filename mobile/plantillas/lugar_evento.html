@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+	<meta charset="UTF-8">
+	<title>App Movil</title>
+	<link rel="shortcut icon" type="text/css" href="{{STATIC_URL}}img/icono de la Aplicacion Movil.png">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}jquery.mobile-1.3.1/jquery.mobile-1.3.1.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/css.css">
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/jquery.fancybox.css?v=2.1.4" />
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}js/jquery.fancybox.js?v=2.1.4"></script>
+	<script type="text/javascript" src="{{STATIC_URL}}jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
+	<script type="text/javascript">
+      $(document).ready(function() {
+          $('.fancybox').fancybox();
+        });
+    </script>
+	<style type="text/css">
+	.ui-page {
+		background: transparent url({{STATIC_URL}}icons/cerrito_de_la_libertad.jpg);
+	    background-repeat: no-repeat;
+	    position: absolute;
+	    z-index: 1;
+	    background-size: cover;
+	    -webkit-cara trasera-visibility: hidden;
+   	}
+	.ui-content{
+    	background: transparent no-repeat;
+	}
+	li{
+		opacity: 0.7;
+	}
+	</style>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+</head>
+<body>
+
+	<!--Cabecera-->
+	<div data-role="header" data-theme="a">
+	<img src="{{STATIC_URL}}img/Logo de la Aplicacion Movils.png" width="50%">
+	</div>
+	<div data-role="header" data-theme="b">
+	<h1>Lugares Turisticos</h1>
+	<a href="#" data-icon="arrow-l" data-rel="back">Atrás</a>
+	</div>
+	<!--Contenido-->
+	<div data-role="content">
+
+	
+		<div data-role="content2">
+			<ul data-role="listview" data-theme="a" id="lugares_turisticos">
+				<li><a href="#" data-transition="slide">
+						<img src="{{MEDIA_URL}}{{lugar_turistico.portada}}" height="80px">
+						<h2>{{lugar_turistico.nombre}}</h2>
+						<p>{{lugar_turistico.descripcion}}</p>
+					</a>
+				</li>					
+			</ul>
+		</div>
+	</div>
+	<div id="info_lugar">
+		<a  class="fancybox fancybox.iframe lugar-mapa" href="/MapaEvento/{{lugar_turistico.id}}">
+			<img class="icono" src="{{STATIC_URL}}iconos/mapa.png"><p>MAPA</p>
+		</a>
+		<div class="lugar-redes">
+
+<a href="http://youtube.com/user/{{lugar_turistico.youtube}}"><img src="{{STATIC_URL}}iconos/youtube.png"></a>
+<a href="http://twitter.com/{{lugar_turistico.twitter}}"><img src="{{STATIC_URL}}iconos/twitter.png"></a>
+<a href="http://plus.google.com/u/0/117639392115598220931"><img src="{{STATIC_URL}}iconos/google.png"></a>
+<div style="float:left" class="fb-like" data-href="https://www.facebook.com/{{lugar_turistico.facebook}}" data-width="40px" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="box_count" data-action="like" data-show-faces="false" data-send="false"></div>
+
+		</div>
+		<div class="lugar-info">
+			<h5 style="color:#353535">DESCRIPCION</h5>
+			<a class="fancybox fancybox.iframe" href="/GaleriaEvento/{{lugar_turistico.id}}"><h5>IMAGENES</h5></a><br/><br/>
+			<p class="lugar-contenico">
+				{{lugar_turistico.descripcion}}
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>

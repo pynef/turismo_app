@@ -1,0 +1,87 @@
+#lugares_turisticos{
+	padding: 5px 10px;
+}
+#lugares_turisticos h2{
+	color: #ffffff;
+	font-size: 13pt;
+	margin-top: -10px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#lugares_turisticos p{
+	text-align: center;
+	color: #c0c0c0;
+}
+#lugares_turisticos img{
+	border-radius: 5px;
+	margin-left: 5%;
+
+}
+
+/*lugar informacion*/
+
+#info_lugar{
+	width: auto;
+}
+.lugar-mapa{
+	background: rgba(0, 0,0, 0.5);
+	padding: 5px 5px 1px 1px;
+	margin-bottom: 10px;
+	margin-left: 1%;
+	float: left;
+	width: auto;
+	border-radius: 5px;
+}
+.lugar-mapa p{
+	margin-top: 10px;
+	margin-left: 5px;
+	float: left;
+}
+.icono{
+	width: 40px;
+	margin-top: -5px;
+	float: left;
+}
+.lugar-redes{
+	width: 65%;
+	background: rgba(0, 0,0, 0.5);
+	margin-right: 1%;
+	margin-bottom: 10px;
+	float: right;
+	border-radius: 5px;
+}
+.lugar-redes img{
+	width: 16%;
+	height: 60px;
+	margin: 1px;
+
+}
+.lugar-redes div{
+	clear: right;
+}
+.lugar-info{
+	padding: 2%;
+	clear: both;
+	margin: 2% 1%;
+	
+}
+.lugar-info h5{
+	color: #c0c0c0;
+	padding: 3px;
+	margin: 2px;
+	font-size: 10pt;
+	width: 35%;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	float: left;
+}
+.lugar-info p{
+	padding: 10px 20px;
+	color: #FFF;
+	margin: 2px;
+	font-size: 10pt;
+	font-weight: inherit;
+	width: auto;
+	text-align: justify;
+	background: rgba(0, 0, 0, 0.5);
+}
